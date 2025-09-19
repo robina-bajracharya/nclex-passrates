@@ -15,7 +15,7 @@ selected_year = st.sidebar.selectbox("Select Year", YEARS)
 # ========== LOAD SHAPEFILE ==========
 @st.cache_resource
 def load_shapefile():
-    counties = gpd.read_file("tn_counties/tl_2021_us_county/tl_2021_us_county.shp")
+    counties = gpd.read_file("tn_counties.json")
     return counties[counties["STATEFP"] == "47"]  # Tennessee only
 
 tn_counties = load_shapefile()
